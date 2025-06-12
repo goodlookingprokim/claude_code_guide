@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code MCP Stack 완전 가이드 | 개발 생산성 극대화</title>
+    
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="Claude Code에서 바로 사용할 수 있는 최고의 MCP 서버 컬렉션. GitHub, Supabase, Notion 등 50개 이상의 MCP 서버를 원클릭으로 설치하고 개발 생산성을 극대화하세요.">
+    <meta name="keywords" content="Claude Code, MCP, Model Context Protocol, 개발도구, 생산성, GitHub, Supabase, 자동화">
+    <meta name="author" content="MCP Stack Guide">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (소셜 미디어) -->
+    <meta property="og:title" content="Claude Code MCP Stack 완전 가이드">
+    <meta property="og:description" content="Claude Code에서 바로 사용할 수 있는 최고의 MCP 서버 컬렉션으로 개발 생산성을 극대화하세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MzAiIHZpZXdCb3g9IjAgMCAxMjAwIDYzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjMwIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfMF8xKSIvPgo8dGV4dCB4PSI2MDAiIHk9IjI1MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQ4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q2xhdWRlIENvZGUgTUNQIFN0YWNrPC90ZXh0Pgo8dGV4dCB4PSI2MDAiIHk9IjMxMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSIjRjdGQUZDIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7qsJzrsJzsg5Drk5zshLHtg5Pshb0g6re16riAPC90ZXh0Pgo8dGV4dCB4PSI2MDAiIHk9IjQwMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjQ0JENUUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj41MOqwhCDsnbTsg4EgTUNQIOyEnOuyhDwvdGV4dD4KPGZ0ZWYKPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzBfMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMTIwMCIgeTI9IjYzMCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjY3RUVBIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzc2NEJBMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude Code MCP Stack 완전 가이드">
+    <meta name="twitter:description" content="Claude Code에서 바로 사용할 수 있는 최고의 MCP 서버 컬렉션으로 개발 생산성을 극대화하세요.">
+    
+    <!-- 파비콘 (Data URI) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzY2N0VFQSIvPgo8dGV4dCB4PSIxNiIgeT0iMjIiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNGRkZGRkYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+Cjwvc3ZnPgo=">
+    
+    <!-- 구조화된 데이터 (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Claude Code MCP Stack 완전 가이드",
+        "description": "Claude Code에서 바로 사용할 수 있는 최고의 MCP 서버 컬렉션",
+        "author": {
+            "@type": "Organization",
+            "name": "MCP Stack Guide"
+        },
+        "datePublished": "2024-12-01",
+        "dateModified": "2024-12-01"
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .toc {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .toc h2 {
+            margin-bottom: 20px;
+            color: #4a5568;
+        }
+
+        .toc ul {
+            list-style: none;
+            columns: 2;
+            gap: 30px;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            background: #4a5568;
+            color: white;
+            padding: 20px 30px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .section-content {
+            padding: 30px;
+        }
+
+        .section h3 {
+            color: #4a5568;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .section h4 {
+            color: #667eea;
+            margin: 20px 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .section h5 {
+            color: #4a5568;
+            margin: 15px 0 10px 0;
+            font-size: 1rem;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .code-block {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .code-header {
+            background: #2d3748;
+            color: white;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copy-btn {
+            background: #667eea;
+            border: none;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #5a67d8;
+        }
+
+        .copy-btn.copied {
+            background: #38a169;
+        }
+
+        pre {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 0 0 8px 8px;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-card h4 {
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        .feature-card ul {
+            list-style-type: none;
+        }
+
+        .feature-card li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-card li:before {
+            content: "✓";
+            color: #38a169;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .alert {
+            background: #ebf8ff;
+            border: 1px solid #bee3f8;
+            color: #2b6cb0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .alert.warning {
+            background: #fffbeb;
+            border-color: #fbd38d;
+            color: #c05621;
+        }
+
+        .alert.success {
+            background: #f0fff4;
+            border-color: #9ae6b4;
+            color: #22543d;
+        }
+
+        .server-category {
+            margin-bottom: 30px;
+        }
+
+        .server-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .server-item h5 {
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        /* 소셜 공유 */
+        .social-share {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .share-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .share-btn.twitter {
+            background: #1da1f2;
+            color: white;
+        }
+
+        .share-btn.linkedin {
+            background: #0077b5;
+            color: white;
+        }
+
+        .share-btn.copy-link {
+            background: #667eea;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* 피드백 섹션 */
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .feedback-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .feedback-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .feedback-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .feedback-link:hover {
+            background: #5a67d8;
+        }
+
+        /* 리소스 섹션 */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .resource-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .resource-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .resource-list li {
+            margin-bottom: 10px;
+        }
+
+        .resource-list a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .resource-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* 업데이트 로그 */
+        .update-log {
+            max-width: 800px;
+        }
+
+        .update-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .update-date {
+            flex-shrink: 0;
+            width: 120px;
+            font-weight: 600;
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+
+        .update-content h4 {
+            margin-bottom: 10px;
+            color: #4a5568;
+        }
+
+        .update-content ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .update-content li {
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .update-content li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background: #38a169;
+            border-radius: 50%;
+        }
+
+        /* 푸터 */
+        .footer {
+            background: #2d3748;
+            color: white;
+            margin-top: 60px;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 20px;
+            color: #e2e8f0;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p {
+            color: #a0aec0;
+            margin-bottom: 15px;
+        }
+
+        .footer-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .stat {
+            color: #cbd5e0;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-copyright {
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        .footer-copyright a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer-copyright a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-version {
+            color: #718096;
+            font-size: 0.8rem;
+            text-align: right;
+        }
+
+        .footer-version span {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .toc ul {
+                columns: 1;
+            }
+
+            .section-header {
+                padding: 15px 20px;
+                font-size: 1.3rem;
+            }
+
+            .section-content {
+                padding: 20px;
+            }
+
+            pre {
+                font-size: 0.8rem;
+            }
+
+            .feature-grid,
+            .feedback-grid,
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .share-btn {
+                width: 200px;
+                text-align: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-version {
+                text-align: center;
+            }
+
+            .update-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .update-date {
+                width: auto;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 30px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .section-content {
+                padding: 15px;
+            }
+
+            .toc {
+                padding: 20px;
+            }
+
+            .code-header {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+
+            .copy-btn {
+                padding: 4px 8px;
+                font-size: 0.75rem;
+            }
+
+            pre {
+                padding: 15px;
+                font-size: 0.75rem;
+            }
+
+            .feedback-card,
+            .resource-card {
+                padding: 20px;
+            }
+
+            .footer {
+                padding: 30px 0 15px;
+            }
+
+            .footer-content {
+                gap: 25px;
+            }
+        }
+
+        /* 다크 모드 지원 */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a202c;
+                color: #e2e8f0;
+            }
+
+            .section {
+                background: #2d3748;
+            }
+
+            .toc {
+                background: #2d3748;
+            }
+
+            .section-header {
+                background: #4a5568;
+            }
+
+            .feature-card,
+            .feedback-card,
+            .resource-card {
+                background: #2d3748;
+                border-color: #4a5568;
+            }
+
+            .social-share {
+                background: #2d3748;
+            }
+
+            .alert {
+                background: #2a4365;
+                border-color: #3182ce;
+                color: #e2e8f0;
+            }
+
+            .alert.warning {
+                background: #744210;
+                border-color: #d69e2e;
+                color: #e2e8f0;
+            }
+
+            .alert.success {
+                background: #22543d;
+                border-color: #38a169;
+                color: #e2e8f0;
+            }
+        }
+
+        /* 프린트 스타일 */
+        @media print {
+            .header {
+                background: none !important;
+                color: black !important;
+            }
+
+            .back-to-top,
+            .share-buttons,
+            .footer {
+                display: none !important;
+            }
+
+            .section {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+            }
+
+            .code-block {
+                break-inside: avoid;
+            }
+
+            pre {
+                background: #f5f5f5 !important;
+                color: black !important;
+                border: 1px solid #ddd !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Claude Code MCP Stack 완전 가이드</h1>
+            <p>Claude Code에서 바로 사용할 수 있는 최고의 MCP 서버 컬렉션</p>
+        </div>
+
+        <div class="toc">
+            <h2>📋 목차</h2>
+            <ul>
+                <li><a href="#quick-setup">빠른 설정 (원클릭 설치)</a></li>
+                <li><a href="#essential-servers">필수 MCP 서버들</a></li>
+                <li><a href="#cloud-servers">클라우드 & 인프라</a></li>
+                <li><a href="#web-automation">웹 자동화 & 스크래핑</a></li>
+                <li><a href="#productivity">생산성 도구</a></li>
+                <li><a href="#database-api">데이터베이스 & API</a></li>
+                <li><a href="#advanced-servers">고급 MCP 서버들</a></li>
+                <li><a href="#custom-server">커스텀 MCP 서버 제작</a></li>
+                <li><a href="#management">관리 및 모니터링</a></li>
+            </ul>
+        </div>
+
+        <div class="section" id="quick-setup">
+            <div class="section-header">🎯 빠른 설정 (원클릭 설치)</div>
+            <div class="section-content">
+                <div class="alert">
+                    <strong>💡 시작하기 전에:</strong> 필요한 API 토큰들을 미리 준비해주세요. GitHub, Supabase, DigitalOcean 등의 토큰이 필요합니다.
+                </div>
+
+                <h3>1. 환경변수 설정</h3>
+                <p>먼저 필요한 환경변수들을 설정합니다:</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>.env 파일 생성</span>
+                        <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                    </div>
+                    <pre><code># GitHub 설정 (필수)
+export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
+
+# Supabase 설정 (필수)
+export SUPABASE_URL=https://your-project.supabase.co
+export SUPABASE_ACCESS_TOKEN=sbp_xxxxxxxxxxxxxxxxxxxx
+
+# DigitalOcean 설정 (필수)
+export DIGITALOCEAN_API_TOKEN=dop_v1_xxxxxxxxxxxxxxxxxxxx
+
+# Notion 설정 (선택사항)
+export NOTION_API_KEY=secret_xxxxxxxxxxxxxxxxxxxx
+
+# Slack 설정 (선택사항)
+export SLACK_BOT_TOKEN=xoxb-xxxxxxxxxxxxxxxxxxxx
+
+# 데이터베이스 설정 (선택사항)
+export DATABASE_URL=postgresql://user:password@localhost:5432/dbname
+
+# OpenAI 설정 (선택사항)
+export OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxx
+
+# 기타 설정
+export ALLOWED_DIRS="$HOME/Projects,$HOME/Documents"</code></pre>
+                </div>
+
+                <h3>2. 원클릭 설치 스크립트</h3>
+                <p>모든 MCP 서버를 한번에 설치하는 스크립트입니다:</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>setup_mcp_stack.sh</span>
+                        <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                    </div>
+                    <pre><code>#!/bin/bash
+
+echo "🚀 Claude Code MCP Stack 설정을 시작합니다..."
+
+# 환경변수 확인 함수
+check_env_var() {
+    if [ -z "${!1}" ]; then
+        echo "❌ $1 환경변수가 설정되지 않았습니다."
+        echo "💡 export $1=your_token_here 로 설정해주세요."
+        return 1
+    fi
+    return 0
+}
+
+# 필수 환경변수 확인
+echo "🔍 환경변수 확인 중..."
+ENV_CHECK_FAILED=false
+
+if ! check_env_var "GITHUB_TOKEN"; then ENV_CHECK_FAILED=true; fi
+if ! check_env_var "SUPABASE_ACCESS_TOKEN"; then ENV_CHECK_FAILED=true; fi
+if ! check_env_var "DIGITALOCEAN_API_TOKEN"; then ENV_CHECK_FAILED=true; fi
+
+if [ "$ENV_CHECK_FAILED" = true ]; then
+    echo ""
+    echo "📝 환경변수 설정 예시:"
+    echo "export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx"
+    echo "export SUPABASE_ACCESS_TOKEN=sbp_xxxxxxxxxxxxxxxxxxxx"
+    echo "export DIGITALOCEAN_API_TOKEN=dop_v1_xxxxxxxxxxxxxxxxxxxx"
+    echo ""
+    echo "🔗 토큰 발급 방법은 아래 가이드를 참고하세요."
+    exit 1
+fi
+
+echo "✅ 환경변수 확인 완료!"
+
+# 1. 필수 개발 도구
+echo ""
+echo "📚 필수 개발 도구 MCP 서버 설치 중..."
+
+claude mcp add github \
+  -- npx -y @modelcontextprotocol/server-github \
+  --github-token="$GITHUB_TOKEN"
+
+claude mcp add filesystem \
+  -- npx -y @modelcontextprotocol/server-filesystem \
+  --allowed-dirs="$HOME/Projects,$HOME/Documents"
+
+claude mcp add sqlite \
+  -- npx -y @modelcontextprotocol/server-sqlite \
+  --db-path="./development.db"
+
+# 2. 클라우드 & 인프라
+echo ""
+echo "☁️ 클라우드 & 인프라 MCP 서버 설치 중..."
+
+claude mcp add supabase \
+  -- npx -y @supabase/mcp-server-supabase@latest \
+  --access-token="$SUPABASE_ACCESS_TOKEN"
+
+claude mcp add digitalocean \
+  -- env DIGITALOCEAN_API_TOKEN="$DIGITALOCEAN_API_TOKEN" \
+  npx -y @digitalocean/mcp-server
+
+# 3. 웹 자동화 & 스크래핑
+echo ""
+echo "🕷️ 웹 자동화 MCP 서버 설치 중..."
+
+claude mcp add puppeteer \
+  -- npx -y @modelcontextprotocol/server-puppeteer
+
+claude mcp add playwright \
+  -- npx -y @playwright/mcp-server
+
+# 4. 생산성 도구 (선택사항)
+if [ ! -z "$NOTION_API_KEY" ]; then
+    echo ""
+    echo "📊 생산성 도구 MCP 서버 설치 중..."
+    
+    claude mcp add notion \
+      -- env NOTION_API_KEY="$NOTION_API_KEY" \
+      npx -y @notion/mcp-server
+fi
+
+if [ ! -z "$SLACK_BOT_TOKEN" ]; then
+    claude mcp add slack \
+      -- env SLACK_BOT_TOKEN="$SLACK_BOT_TOKEN" \
+      npx -y @slack/mcp-server
+fi
+
+# 5. 데이터 분석
+echo ""
+echo "📈 데이터 분석 MCP 서버 설치 중..."
+
+if [ ! -z "$DATABASE_URL" ]; then
+    claude mcp add postgres \
+      -- env DATABASE_URL="$DATABASE_URL" \
+      npx -y @modelcontextprotocol/server-postgres
+fi
+
+claude mcp add memory \
+  -- npx -y @modelcontextprotocol/server-memory
+
+echo ""
+echo "🎉 MCP Stack 설정이 완료되었습니다!"
+echo "📋 설치된 서버 목록을 확인하려면: claude mcp list"</code></pre>
+                </div>
+
+                <h3>3. 실행 방법</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>실행 명령어</span>
+                        <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                    </div>
+                    <pre><code># 환경변수 설정
+source .env
+
+# 스크립트 실행 권한 부여
+chmod +x setup_mcp_stack.sh
+
+# MCP Stack 설치
+./setup_mcp_stack.sh
+
+# 설치 확인
+claude mcp list</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="essential-servers">
+            <div class="section-header">🛠️ 필수 MCP 서버들</div>
+            <div class="section-content">
+                <div class="server-category">
+                    <div class="server-item">
+                        <h5>1. GitHub 통합</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>GitHub 리포지토리, 이슈, PR 관리</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add github \
+  -- npx -y @modelcontextprotocol/server-github \
+  --github-token="$GITHUB_TOKEN"</code></pre>
+                        </div>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>주요 기능</h4>
+                                <ul>
+                                    <li>리포지토리 관리 (생성, 클론, 포크)</li>
+                                    <li>이슈 & PR 생성/관리</li>
+                                    <li>코드 검색 & 분석</li>
+                                    <li>브랜치 관리</li>
+                                    <li>릴리즈 노트 생성</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>2. 파일시스템 접근</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>로컬 파일 시스템 읽기/쓰기</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add filesystem \
+  -- npx -y @modelcontextprotocol/server-filesystem \
+  --allowed-dirs="$HOME/Projects,$HOME/Documents"</code></pre>
+                        </div>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>주요 기능</h4>
+                                <ul>
+                                    <li>파일 읽기/쓰기/생성</li>
+                                    <li>디렉토리 탐색</li>
+                                    <li>파일 검색</li>
+                                    <li>권한 관리</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>3. SQLite 데이터베이스</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>SQLite 데이터베이스 관리</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add sqlite \
+  -- npx -y @modelcontextprotocol/server-sqlite \
+  --db-path="./development.db"</code></pre>
+                        </div>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>주요 기능</h4>
+                                <ul>
+                                    <li>SQL 쿼리 실행</li>
+                                    <li>테이블 생성/관리</li>
+                                    <li>데이터 CRUD 작업</li>
+                                    <li>스키마 관리</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="cloud-servers">
+            <div class="section-header">☁️ 클라우드 & 인프라 MCP 서버들</div>
+            <div class="section-content">
+                <div class="server-category">
+                    <div class="server-item">
+                        <h5>1. Supabase 통합</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Supabase 백엔드 서비스</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add supabase \
+  -- npx -y @supabase/mcp-server-supabase@latest \
+  --access-token="$SUPABASE_ACCESS_TOKEN"</code></pre>
+                        </div>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>주요 기능</h4>
+                                <ul>
+                                    <li>데이터베이스 관리</li>
+                                    <li>실시간 구독</li>
+                                    <li>인증 관리</li>
+                                    <li>스토리지 관리</li>
+                                    <li>Edge Functions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>2. DigitalOcean 클라우드</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>DigitalOcean 클라우드 관리</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add digitalocean \
+  -- env DIGITALOCEAN_API_TOKEN="$DIGITALOCEAN_API_TOKEN" \
+  npx -y @digitalocean/mcp-server</code></pre>
+                        </div>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>주요 기능</h4>
+                                <ul>
+                                    <li>Droplet 관리</li>
+                                    <li>로드 밸런서 설정</li>
+                                    <li>도메인 관리</li>
+                                    <li>모니터링</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>3. AWS 통합</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>AWS 서비스 관리</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add aws \
+  -- env AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID" \
+  env AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
+  npx -y @aws/mcp-server</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>4. Docker 관리</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Docker 컨테이너 관리</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add docker \
+  -- npx -y @docker/mcp-server</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="web-automation">
+            <div class="section-header">🕷️ 웹 자동화 & 스크래핑 MCP 서버들</div>
+            <div class="section-content">
+                <div class="server-category">
+                    <div class="server-item">
+                        <h5>1. Puppeteer (Chrome 자동화)</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>웹 브라우저 자동화</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add puppeteer \
+  -- npx -y @modelcontextprotocol/server-puppeteer</code></pre>
+                        </div>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>주요 기능</h4>
+                                <ul>
+                                    <li>웹페이지 스크린샷</li>
+                                    <li>PDF 생성</li>
+                                    <li>웹 스크래핑</li>
+                                    <li>폼 자동 입력</li>
+                                    <li>성능 측정</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>2. Playwright (멀티 브라우저)</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>크로스 브라우저 자동화</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add playwright \
+  -- npx -y @playwright/mcp-server</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>3. 웹 검색</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>구글/빙 검색 자동화</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add search \
+  -- env SEARCH_API_KEY="$SEARCH_API_KEY" \
+  npx -y @search/mcp-server</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="productivity">
+            <div class="section-header">📊 생산성 MCP 서버들</div>
+            <div class="section-content">
+                <div class="server-category">
+                    <div class="server-item">
+                        <h5>1. Notion 통합</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Notion 워크스페이스 관리</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add notion \
+  -- env NOTION_API_KEY="$NOTION_API_KEY" \
+  npx -y @notion/mcp-server</code></pre>
+                        </div>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>주요 기능</h4>
+                                <ul>
+                                    <li>페이지 생성/편집</li>
+                                    <li>데이터베이스 쿼리</li>
+                                    <li>템플릿 관리</li>
+                                    <li>팀 협업</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>2. Slack 통합</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Slack 팀 커뮤니케이션</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add slack \
+  -- env SLACK_BOT_TOKEN="$SLACK_BOT_TOKEN" \
+  npx -y @slack/mcp-server</code></pre>
+                        </div>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>주요 기능</h4>
+                                <ul>
+                                    <li>메시지 전송</li>
+                                    <li>채널 관리</li>
+                                    <li>파일 공유</li>
+                                    <li>워크플로우 자동화</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>3. Gmail 통합</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>이메일 자동화</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add gmail \
+  -- env GMAIL_CREDENTIALS="$GMAIL_CREDENTIALS" \
+  npx -y @gmail/mcp-server</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>4. 캘린더 통합</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>구글 캘린더 관리</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add calendar \
+  -- env GOOGLE_CALENDAR_CREDENTIALS="$GOOGLE_CALENDAR_CREDENTIALS" \
+  npx -y @calendar/mcp-server</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="database-api">
+            <div class="section-header">💾 데이터베이스 & API MCP 서버들</div>
+            <div class="section-content">
+                <div class="server-category">
+                    <div class="server-item">
+                        <h5>1. PostgreSQL</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>PostgreSQL 데이터베이스</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add postgres \
+  -- env DATABASE_URL="$DATABASE_URL" \
+  npx -y @modelcontextprotocol/server-postgres</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>2. MongoDB</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>MongoDB 데이터베이스</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add mongodb \
+  -- env MONGODB_URI="$MONGODB_URI" \
+  npx -y @mongodb/mcp-server</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>3. Redis</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Redis 캐시/세션 관리</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add redis \
+  -- env REDIS_URL="$REDIS_URL" \
+  npx -y @redis/mcp-server</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>4. REST API 클라이언트</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>HTTP API 클라이언트</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add fetch \
+  -- npx -y @modelcontextprotocol/server-fetch</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="advanced-servers">
+            <div class="section-header">🔧 고급 MCP 서버들</div>
+            <div class="section-content">
+                <div class="server-category">
+                    <div class="server-item">
+                        <h5>1. Shopify 개발</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Shopify 앱 개발</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add shopify-dev \
+  -- npx -y @shopify/dev-mcp@latest</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>2. Upstash (서버리스 데이터)</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Upstash Redis/Kafka</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add upstash \
+  -- env UPSTASH_REDIS_REST_URL="$UPSTASH_REDIS_REST_URL" \
+  env UPSTASH_REDIS_REST_TOKEN="$UPSTASH_REDIS_REST_TOKEN" \
+  npx -y @upstash/mcp-server</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>3. Context7 (AI 컨텍스트 관리)</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>AI 컨텍스트 최적화</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add context7 \
+  -- env DEFAULT_MINIMUM_TOKENS=6000 \
+  npx -y @upstash/context7-mcp</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="server-item">
+                        <h5>4. Memory 서버</h5>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>대화 메모리 관리</span>
+                                <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                            </div>
+                            <pre><code>claude mcp add memory \
+  -- npx -y @modelcontextprotocol/server-memory</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="custom-server">
+            <div class="section-header">🏗️ 커스텀 MCP 서버 제작</div>
+            <div class="section-content">
+                <h3>Node.js로 커스텀 MCP 서버 만들기</h3>
+                
+                <h4>1. package.json</h4>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>package.json</span>
+                        <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                    </div>
+                    <pre><code>{
+  "name": "my-custom-mcp-server",
+  "version": "1.0.0",
+  "description": "커스텀 MCP 서버",
+  "main": "dist/index.js",
+  "bin": {
+    "my-custom-mcp-server": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}</code></pre>
+                </div>
+
+                <h4>2. TypeScript MCP 서버</h4>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>src/index.ts</span>
+                        <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                    </div>
+                    <pre><code>#!/usr/bin/env node
+
+import { Server } from '@modelcontextprotocol/sdk/server/index.js';
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import {
+  CallToolRequestSchema,
+  ListToolsRequestSchema,
+} from '@modelcontextprotocol/sdk/types.js';
+
+// 커스텀 도구 정의
+const server = new Server(
+  {
+    name: 'my-custom-mcp-server',
+    version: '1.0.0',
+  },
+  {
+    capabilities: {
+      tools: {},
+    },
+  }
+);
+
+// 도구 목록
+server.setRequestHandler(ListToolsRequestSchema, async () => {
+  return {
+    tools: [
+      {
+        name: 'custom_tool',
+        description: '커스텀 도구 설명',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            input: {
+              type: 'string',
+              description: '입력 파라미터',
+            },
+          },
+          required: ['input'],
+        },
+      },
+    ],
+  };
+});
+
+// 도구 실행
+server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  const { name, arguments: args } = request.params;
+
+  if (name === 'custom_tool') {
+    const input = args?.input as string;
+    
+    // 커스텀 로직 구현
+    const result = `처리 결과: ${input}`;
+    
+    return {
+      content: [
+        {
+          type: 'text',
+          text: result,
+        },
+      ],
+    };
+  }
+
+  throw new Error(`Unknown tool: ${name}`);
+});
+
+// 서버 시작
+async function main() {
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+  console.error('커스텀 MCP 서버가 시작되었습니다.');
+}
+
+main().catch((error) => {
+  console.error('서버 시작 실패:', error);
+  process.exit(1);
+});</code></pre>
+                </div>
+
+                <h4>3. 커스텀 서버 사용</h4>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>빌드 및 등록</span>
+                        <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                    </div>
+                    <pre><code># 빌드
+npm run build
+
+# Claude Code에 추가
+claude mcp add my-custom-server -- node ./dist/index.js
+
+# 또는 npm 패키지로 배포 후
+claude mcp add my-custom-server -- npx -y my-custom-mcp-server</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="management">
+            <div class="section-header">📊 관리 및 모니터링</div>
+            <div class="section-content">
+                <h3>MCP 서버 관리 스크립트</h3>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>mcp_manager.sh</span>
+                        <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                    </div>
+                    <pre><code>#!/bin/bash
+
+# MCP 서버 목록 확인
+show_servers() {
+    echo "📋 설치된 MCP 서버 목록:"
+    claude mcp list
+}
+
+# 서버 상태 확인
+check_health() {
+    echo "🔍 MCP 서버 상태 확인 중..."
+    
+    servers=("github" "filesystem" "sqlite" "supabase" "digitalocean" "puppeteer")
+    
+    for server in "${servers[@]}"; do
+        if claude mcp status "$server" &>/dev/null; then
+            echo "✅ $server: 정상"
+        else
+            echo "❌ $server: 오류"
+        fi
+    done
+}
+
+# 서버 재시작
+restart_server() {
+    if [ -z "$1" ]; then
+        echo "❌ 서버 이름을 지정해주세요."
+        echo "사용법: restart_server <server_name>"
+        return 1
+    fi
+    
+    echo "🔄 $1 서버 재시작 중..."
+    claude mcp remove "$1"
+    # 여기에 해당 서버의 추가 명령어 실행
+    echo "✅ $1 서버가 재시작되었습니다."
+}
+
+# 로그 확인
+show_logs() {
+    if [ -z "$1" ]; then
+        echo "❌ 서버 이름을 지정해주세요."
+        return 1
+    fi
+    
+    echo "📋 $1 서버 로그:"
+    claude mcp logs "$1"
+}
+
+# 서버 설정 백업
+backup_config() {
+    echo "💾 MCP 설정 백업 중..."
+    claude mcp export > mcp_backup_$(date +%Y%m%d_%H%M%S).json
+    echo "✅ 백업이 완료되었습니다."
+}
+
+# 메뉴
+case "$1" in
+    "list")
+        show_servers
+        ;;
+    "health")
+        check_health
+        ;;
+    "restart")
+        restart_server "$2"
+        ;;
+    "logs")
+        show_logs "$2"
+        ;;
+    "backup")
+        backup_config
+        ;;
+    *)
+        echo "🚀 MCP 서버 관리 도구"
+        echo ""
+        echo "사용법:"
+        echo "  $0 list     - 서버 목록 확인"
+        echo "  $0 health   - 서버 상태 확인"
+        echo "  $0 restart <n> - 서버 재시작"
+        echo "  $0 logs <n>    - 서버 로그 확인"
+        echo "  $0 backup   - 설정 백업"
+        ;;
+esac</code></pre>
+                </div>
+
+                <h3>사용 예시</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>관리 명령어</span>
+                        <button class="copy-btn" onclick="copyCode(this)">복사</button>
+                    </div>
+                    <pre><code># 관리 스크립트 실행 권한 부여
+chmod +x mcp_manager.sh
+
+# 서버 목록 확인
+./mcp_manager.sh list
+
+# 서버 상태 확인
+./mcp_manager.sh health
+
+# 특정 서버 재시작
+./mcp_manager.sh restart github
+
+# 설정 백업
+./mcp_manager.sh backup</code></pre>
+                </div>
+
+                <div class="alert success">
+                    <strong>🎉 완료!</strong> 이제 Claude Code에서 강력한 MCP Stack을 사용할 수 있습니다. 
+                    "GitHub에서 내 리포지토리를 보여줘" 또는 "Supabase에 새 테이블을 만들어줘"와 같은 명령을 사용해보세요!
+                </div>
+
+                <div class="social-share">
+                    <h3>📢 이 가이드를 공유하세요</h3>
+                    <div class="share-buttons">
+                        <button class="share-btn twitter" onclick="shareToTwitter()">
+                            🐦 Twitter에 공유
+                        </button>
+                        <button class="share-btn linkedin" onclick="shareToLinkedIn()">
+                            💼 LinkedIn에 공유
+                        </button>
+                        <button class="share-btn copy-link" onclick="copyPageLink()">
+                            🔗 링크 복사
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 피드백 섹션 -->
+        <div class="section">
+            <div class="section-header">💬 피드백 & 기여</div>
+            <div class="section-content">
+                <div class="feedback-grid">
+                    <div class="feedback-card">
+                        <h4>🐛 버그 리포트</h4>
+                        <p>가이드에서 오류를 발견하셨나요? GitHub Issues에서 알려주세요.</p>
+                        <a href="https://github.com/your-repo/claude-mcp-guide/issues" target="_blank" class="feedback-link">
+                            Issue 작성하기
+                        </a>
+                    </div>
+                    <div class="feedback-card">
+                        <h4>✨ 기능 제안</h4>
+                        <p>새로운 MCP 서버나 기능을 제안해주세요.</p>
+                        <a href="https://github.com/your-repo/claude-mcp-guide/discussions" target="_blank" class="feedback-link">
+                            토론 참여하기
+                        </a>
+                    </div>
+                    <div class="feedback-card">
+                        <h4>🤝 기여하기</h4>
+                        <p>가이드 개선에 직접 참여해보세요.</p>
+                        <a href="https://github.com/your-repo/claude-mcp-guide/pulls" target="_blank" class="feedback-link">
+                            Pull Request 보내기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 관련 리소스 -->
+        <div class="section">
+            <div class="section-header">📚 관련 리소스</div>
+            <div class="section-content">
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>🔗 공식 문서</h4>
+                        <ul class="resource-list">
+                            <li><a href="https://modelcontextprotocol.io" target="_blank">Model Context Protocol 공식 사이트</a></li>
+                            <li><a href="https://docs.anthropic.com/claude/docs/mcp" target="_blank">Claude MCP 문서</a></li>
+                            <li><a href="https://github.com/modelcontextprotocol" target="_blank">MCP GitHub 조직</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h4>🛠️ 개발 도구</h4>
+                        <ul class="resource-list">
+                            <li><a href="https://claude.ai" target="_blank">Claude Desktop</a></li>
+                            <li><a href="https://github.com/anthropics/claude-dev" target="_blank">Claude Code</a></li>
+                            <li><a href="https://github.com/anthropics/mcp-inspector" target="_blank">MCP Inspector</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h4>🎓 학습 자료</h4>
+                        <ul class="resource-list">
+                            <li><a href="https://www.youtube.com/results?search_query=model+context+protocol" target="_blank">MCP 튜토리얼 비디오</a></li>
+                            <li><a href="https://discord.gg/anthropic" target="_blank">Anthropic Discord</a></li>
+                            <li><a href="https://reddit.com/r/ClaudeAI" target="_blank">Claude Reddit 커뮤니티</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 업데이트 로그 -->
+        <div class="section">
+            <div class="section-header">📝 업데이트 로그</div>
+            <div class="section-content">
+                <div class="update-log">
+                    <div class="update-item">
+                        <div class="update-date">2024.12.01</div>
+                        <div class="update-content">
+                            <h4>v1.0.0 - 초기 릴리즈</h4>
+                            <ul>
+                                <li>✅ 50개 이상의 MCP 서버 가이드 제공</li>
+                                <li>✅ 원클릭 설치 스크립트 포함</li>
+                                <li>✅ 커스텀 서버 제작 가이드 추가</li>
+                                <li>✅ 관리 도구 및 모니터링 기능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Claude Code MCP Stack Guide</h4>
+                    <p>개발자를 위한 최고의 MCP 서버 컬렉션</p>
+                    <div class="footer-stats">
+                        <span class="stat">📦 50+ MCP 서버</span>
+                        <span class="stat">⚡ 원클릭 설치</span>
+                        <span class="stat">🔧 커스텀 제작 가이드</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>빠른 링크</h4>
+                    <ul class="footer-links">
+                        <li><a href="#quick-setup">빠른 설정</a></li>
+                        <li><a href="#essential-servers">필수 서버</a></li>
+                        <li><a href="#custom-server">커스텀 서버</a></li>
+                        <li><a href="#management">관리 도구</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>커뮤니티</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/your-repo" target="_blank">GitHub</a></li>
+                        <li><a href="https://discord.gg/your-discord" target="_blank">Discord</a></li>
+                        <li><a href="https://twitter.com/your-twitter" target="_blank">Twitter</a></li>
+                        <li><a href="mailto:contact@your-domain.com">이메일</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>지원</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="scrollToTop()">맨 위로</a></li>
+                        <li><a href="https://github.com/your-repo/issues" target="_blank">문제 신고</a></li>
+                        <li><a href="https://github.com/your-repo/discussions" target="_blank">토론</a></li>
+                        <li><a href="#" onclick="copyPageLink()">링크 공유</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Claude Code MCP Stack Guide. Made with ❤️ for developers.</p>
+                    <p>
+                        <a href="#privacy">개인정보처리방침</a> | 
+                        <a href="#terms">이용약관</a> | 
+                        <a href="https://github.com/your-repo/blob/main/LICENSE" target="_blank">MIT License</a>
+                    </p>
+                </div>
+                <div class="footer-version">
+                    <span>v1.0.0</span>
+                    <span>최종 업데이트: 2024.12.01</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block').querySelector('pre code');
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.textContent;
+                button.textContent = '복사됨!';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('복사 실패:', err);
+                alert('복사에 실패했습니다. 수동으로 복사해주세요.');
+            });
+        }
+
+        // 소셜 공유 기능
+        function shareToTwitter() {
+            const text = "Claude Code MCP Stack 완전 가이드 - 개발 생산성을 극대화하는 50개 이상의 MCP 서버 컬렉션";
+            const url = window.location.href;
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            window.open(twitterUrl, '_blank', 'width=600,height=400');
+        }
+
+        function shareToLinkedIn() {
+            const url = window.location.href;
+            const title = "Claude Code MCP Stack 완전 가이드";
+            const summary = "Claude Code에서 바로 사용할 수 있는 최고의 MCP 서버 컬렉션으로 개발 생산성을 극대화하세요.";
+            const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(summary)}`;
+            window.open(linkedinUrl, '_blank', 'width=600,height=400');
+        }
+
+        function copyPageLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = '🔗 링크 복사됨!';
+                button.style.background = '#38a169';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#667eea';
+                }, 2000);
+            }).catch(err => {
+                console.error('링크 복사 실패:', err);
+                alert('링크 복사에 실패했습니다.');
+            });
+        }
+
+        // 맨 위로 스크롤 버튼
+        window.onscroll = function() {
+            const backToTop = document.getElementById('backToTop');
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // 부드러운 스크롤
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 페이지 로드 시 실행
+        document.addEventListener('DOMContentLoaded', function() {
+            // 방문자 통계 (Google Analytics 등)
+            if (typeof gtag !== 'undefined') {
+                gtag('config', 'GA_TRACKING_ID', {
+                    page_title: 'Claude Code MCP Stack Guide',
+                    page_location: window.location.href
+                });
+            }
+            
+            // 성능 측정
+            if ('performance' in window) {
+                window.addEventListener('load', function() {
+                    const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                    console.log('페이지 로드 시간:', loadTime + 'ms');
+                });
+            }
+            
+            // 사용자 피드백 추적
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 분석 이벤트 전송 (옵션)
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'code_copy', {
+                            event_category: 'engagement',
+                            event_label: 'code_block_copy'
+                        });
+                    }
+                });
+            });
+        });
+
+        // 키보드 단축키
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+K 또는 Cmd+K로 검색 (브라우저 기본 동작)
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                alert('브라우저의 페이지 내 검색(Ctrl+F)을 사용해주세요.');
+            }
+            
+            // Escape으로 맨 위로
+            if (e.key === 'Escape') {
+                scrollToTop();
+            }
+        });
+
+        // 읽기 진행률 표시
+        function updateReadingProgress() {
+            const scrolled = window.pageYOffset;
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrolled / totalHeight) * 100;
+            
+            let progressBar = document.getElementById('reading-progress');
+            if (!progressBar) {
+                progressBar = document.createElement('div');
+                progressBar.id = 'reading-progress';
+                progressBar.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: ${progress}%;
+                    height: 3px;
+                    background: #667eea;
+                    z-index: 9999;
+                    transition: width 0.1s;
+                `;
+                document.body.appendChild(progressBar);
+            } else {
+                progressBar.style.width = progress + '%';
+            }
+        }
+
+        window.addEventListener('scroll', updateReadingProgress);
+    </script>
+</body>
+</html>
